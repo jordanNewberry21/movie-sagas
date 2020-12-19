@@ -1,12 +1,14 @@
 - [x] Get DB set up with tables and conjoining table movies_genres (movie_id, genre_id)
-- [] add starter data to the conjoined table - write this out on paper which movies get what before you enter in all the values
+- [x] add starter data to the conjoined table - write this out on paper which movies get what before you enter in all the values
 - [] add GET route to genre.router.js 
-- [] add GET route to movie.router.js
+- [x] add GET route to movie.router.js
 - [x] bring in Router to Router views
-- [] add a nav bar for Home, Add Movie views
-- [] Home / List View
-- [] Home component imports MovieList component
-- [] MovieList maps over data sends into MovieCard component
+- [x] add a nav bar for Home, Add Movie views
+- [x] Home / List View
+    - [] style Home / List view more
+    - [] get a cool header with material-ui
+- [x] Home component imports MovieList component
+- [x] MovieList maps over data sends into MovieCard component
 - [] MovieCard renders movie poster image with onClick event taking user to Details component / view
 - [] Details view shows image of the movie with all other details including all genres
 - [] this will require the SQL JOINS between tables to show genres for a particular movie
