@@ -15,13 +15,26 @@ import { takeEvery, put } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchMovies);
+    yield takeEvery('FETCH_DETAILS', fetchDetails);
+}
+
+function* fetchDetails(action) {
+    console.log('in fetch movie details saga.......');
+    try {
+        const response = yield axios.get('/api/movie/' + action.payload);
+        yield put({ type: 'SET_DETAILS', payload: response.data })
+    } catch (error) {
+        console.log('error with movie detail get request.....', error);
+        alert('something went wrong. please try again.');
+      }
+
 }
 
 function* fetchMovies() {
     console.log('in fetch movies saga.......');
     try {
         const response = yield axios.get('/api/movie');
-        yield put({ type: 'SET_MOVIES', payload: response.data})
+        yield put({ type: 'SET_MOVIES', payload: response.data })
     } catch (error) {
         console.log('error with movie get request.....', error);
         alert('something went wrong. please try again.');
@@ -44,7 +57,7 @@ const movies = (state = [], action) => {
 // Used to store individual movie details
 const movieCard = (state = [], action) => {
     switch (action.type) {
-        case 'GET_DETAILS':
+        case 'SET_DETAILS':
             return action.payload;
         default:
             return state;

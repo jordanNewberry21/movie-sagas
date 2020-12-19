@@ -28,6 +28,15 @@ class MovieList extends Component{
         this.props.dispatch({ type: 'FETCH_MOVIES'})
     }
 
+    // movieCard = (event, movieId) => {
+    //     this.props.dispatch({
+    //         type: 'FETCH_DETAILS',
+    //         payload: movieId,
+    //     });
+    //     console.log(this.props.history);
+    //     this.props.history.push('/details');
+    // }
+
     render(){
         const classes = this.props;
         return(
@@ -36,11 +45,7 @@ class MovieList extends Component{
                 <Grid container spacing={3} alignItems='stretch'>
                     {this.props.reduxState.movies.map((movie) => (
                         <Grid key={movie.id} item xs={12} sm={6} md={4} lg={4}>
-                            <Card onClick={() => 
-                                    this.props.dispatch({
-                                        type: 'GET_DETAILS',
-                                        payload: movie
-                                    })}
+                            <Card onClick={(event) => this.props.goToMovieCard(event, movie.id)}
                                 component={Card} className={classes.root}>
                                 <CardContent>
                                     <Typography variant='h4'>{movie.title}</Typography>

@@ -5,6 +5,7 @@ import './App.css';
 // component imports
 import Home from '../Home/Home';
 import AddMovie from '../AddMovie/AddMovie';
+import MovieCard from '../MovieCard/MovieCard';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -25,6 +26,7 @@ class App extends Component {
             </nav>
             <Route exact path='/' component={Home} />
             <Route path='/add' component={AddMovie} />
+            <Route path='/details' component={MovieCard} />
         </Router>
         <p>&copy; 2020 Jordan Newberry</p>
       </div>
