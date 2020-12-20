@@ -9,9 +9,9 @@
     - [] get a cool header with material-ui
 - [x] Home component imports MovieList component
 - [x] MovieList maps over data sends into MovieCard component
-- [] MovieCard renders movie poster image with onClick event taking user to Details component / view
-- [] Details view shows image of the movie with all other details including all genres
-- [] this will require the SQL JOINS between tables to show genres for a particular movie
+- [x] MovieCard renders movie poster image with onClick event taking user to Details component / view
+- [x] Details view shows image of the movie with all other details including all genres
+- [x] this will require the SQL JOINS between tables to show genres for a particular movie
 - [] Details view should also have a `Back to List` button to go back to Home
 - [] AddMovie view will have a form outlined in the INSTRUCTIONS.md file
 - [] AddMovie will have a `Cancel` button to return to the user to the Home view

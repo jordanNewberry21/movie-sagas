@@ -16,7 +16,8 @@ class Home extends Component{
             payload: movie
         });
         this.props.history.push('/details');
-    }
+    } // two dispatches in this function to get both movie details
+      // and genres sent to the MovieCard component
 
     render(){
         return(
