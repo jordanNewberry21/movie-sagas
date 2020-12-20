@@ -19,8 +19,15 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  // Add query to get all genres
-  res.sendStatus(500)
+  const sqlText = `SELECT * FROM genres;`;
+  // pool query
+  pool.query(sqlText)
+      .then((result) => {
+        res.send(result.rows)
+      }).catch((error) => {
+        console.log('error retrieving movie genres......', error);
+      });
+  
 });
 
 module.exports = router;

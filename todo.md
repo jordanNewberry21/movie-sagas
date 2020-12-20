@@ -1,6 +1,6 @@
 - [x] Get DB set up with tables and conjoining table movies_genres (movie_id, genre_id)
 - [x] add starter data to the conjoined table - write this out on paper which movies get what before you enter in all the values
-- [] add GET route to genre.router.js 
+- [x] add GET route to genre.router.js 
 - [x] add GET route to movie.router.js
 - [x] bring in Router to Router views
 - [x] add a nav bar for Home, Add Movie views
@@ -12,7 +12,7 @@
 - [x] MovieCard renders movie poster image with onClick event taking user to Details component / view
 - [x] Details view shows image of the movie with all other details including all genres
 - [x] this will require the SQL JOINS between tables to show genres for a particular movie
-- [] Details view should also have a `Back to List` button to go back to Home
+- [x] Details view should also have a `Back to List` button to go back to Home
 - [] AddMovie view will have a form outlined in the INSTRUCTIONS.md file
 - [] AddMovie will have a `Cancel` button to return to the user to the Home view
 - [] AddMovie will have a `Save` button to POST the movie to the DB
