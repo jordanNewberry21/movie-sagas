@@ -62,6 +62,8 @@ class MovieCard extends Component{
                     </Card>
                     <Typography className={classes.text} variant='h6'>
                         {movie.description}
+                        {/* mapping over the movieGenres reducer which holds the genres
+                        returned by my targeted SQL query */}
                     <ul className="genreList">
                         <li>Genres:</li>
                     {this.props.reduxState.movieGenres.map((g, i) => (
@@ -69,7 +71,7 @@ class MovieCard extends Component{
                     ))}
                     </ul>
                     </Typography>
-                
+                        {/* Home Button */}
                     <Button onClick={this.backToHome}
                             className={classes.button}
                             variant='outlined'

@@ -5,8 +5,8 @@
 - [x] bring in Router to Router views
 - [x] add a nav bar for Home, Add Movie views
 - [x] Home / List View
-    - [] style Home / List view more
-    - [] get a cool header with material-ui
+    - [x] style Home / List view more
+    - [x] get a cool header with material-ui
 - [x] Home component imports MovieList component
 - [x] MovieList maps over data sends into MovieCard component
 - [x] MovieCard renders movie poster image with onClick event taking user to Details component / view

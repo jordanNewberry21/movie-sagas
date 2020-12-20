@@ -23,8 +23,8 @@ function* addMovie(action) {
     console.log('in add movie saga......');
     console.log('movie to add........', action.payload);
     try {
-        axios.post('/api/movie', action.payload);
-        yield put({ type: 'FETCH_MOVIES' });
+        axios.post('/api/movie', action.payload); // sending new movie to POST
+        yield put({ type: 'FETCH_MOVIES' }); // get updated movie list
     } catch (error) {
         console.log('error with movie detail get request.....', error);
         alert('something went wrong. please try again.');
@@ -33,9 +33,9 @@ function* addMovie(action) {
 
 function* fetchDetails(action) {
     console.log('in fetch movie details saga.......');
-    try {
+    try { // getting genres for movie by ID
         const response = yield axios.get('/api/genre/' + action.payload);
-        yield put({ type: 'SET_GENRES', payload: response.data })
+        yield put({ type: 'SET_GENRES', payload: response.data }) // sending to reducer
     } catch (error) {
         console.log('error with movie detail get request.....', error);
         alert('something went wrong. please try again.');
@@ -45,9 +45,9 @@ function* fetchDetails(action) {
 
 function* fetchMovies() {
     console.log('in fetch movies saga.......');
-    try {
+    try { // getting whole movie list from server
         const response = yield axios.get('/api/movie');
-        yield put({ type: 'SET_MOVIES', payload: response.data })
+        yield put({ type: 'SET_MOVIES', payload: response.data }) // send to reducer
     } catch (error) {
         console.log('error with movie get request.....', error);
         alert('something went wrong. please try again.');
@@ -87,7 +87,7 @@ const movieGenres = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
+// Used to store all movie genres
 const allGenres = (state = [], action) => {
     switch (action.type) {
         case 'SET_ALL_GENRES':

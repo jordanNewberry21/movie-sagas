@@ -58,6 +58,8 @@ class MovieList extends Component{
                                 alt={movie.title}
                                 />
                                 <CardActions className={classes.actions} disableActionSpacing>
+                                    {/* onClick event passes movie object and just the movie id
+                                    along to the sagas where the information is split up and sent out */}
                                 <IconButton onClick={(event) => this.props.goToMovieCard(event, movie.id, movie)}
                                     aria-label="Show Movie Details">
                                     <DescriptionIcon />

@@ -9,7 +9,7 @@ class Home extends Component{
         this.props.dispatch({ type: 'FETCH_MOVIES' })
     }
 
-    // movieCard function is passed as props to movieList component as props to have access to Router history
+    // movieCard function is passed as props to movieList component to have access to Router history
     movieCard = (event, movieId, movie) => {
         this.props.dispatch({
             type: 'FETCH_DETAILS',

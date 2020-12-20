@@ -93,7 +93,7 @@ class AddMovie extends Component{
                         <TextField
                             required
                             id="standard-name"
-                            label="Image URL"
+                            label="Movie Poster URL"
                             className={classes.textField}
                             value={this.state.newMovie.poster}
                             onChange={(event) => this.handleChange(event, 'poster')}
@@ -112,12 +112,12 @@ class AddMovie extends Component{
                         <Select onChange={(event) => this.handleChange(event, 'genre_id')}
                             value={this.state.newMovie.genre_id}
                             input={
+                                // I can't figure out how to get this label to show up as a placeholder
                             <OutlinedInput
                                 labelWidth={100}
-                                label='Genres'
                                 name="Genres"
-                                id="genres-simple"/>}>
-
+                                id="outlined-age-simple"/>}>
+                            {/* Drop down values for genre selection */}
                             <MenuItem value="">
                             <em>None</em>
                             </MenuItem>
@@ -135,12 +135,14 @@ class AddMovie extends Component{
                             <MenuItem value={12}>Space-Opera</MenuItem>
                             <MenuItem value={13}>Superhero</MenuItem>
                         </Select>
+                        {/* submit button */}
                         <Button onClick={(event) => this.handleSubmit(event, this.state.newMovie)}
                                 className={classes.button}
                                 variant='contained'
                                 color='primary'>
                             Save
                         </Button>
+                        {/* Cancel button */}
                         <Button onClick={this.cancel}
                                 className={classes.button}
                                 variant='contained'

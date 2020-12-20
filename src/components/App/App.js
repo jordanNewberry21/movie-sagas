@@ -10,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* bringing in Header component which is now the main component */}
         <Header />
         <p>&copy; 2020 Jordan Newberry</p>
       </div>
