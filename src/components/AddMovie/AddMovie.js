@@ -26,7 +26,7 @@ const styles = theme => ({
     width: 200,
   },
   container: {
-    display: 'inline-block',
+    display: 'block',
     flexWrap: 'none',
   },
 });
@@ -66,7 +66,6 @@ class AddMovie extends Component{
         const classes = this.props.classes;
         return(
             <div>
-                <p>{JSON.stringify(this.state)}</p>
                 <h2>Want to Add a New Movie?</h2>
                 <form className={classes.container}>
                     <TextField
@@ -82,7 +81,7 @@ class AddMovie extends Component{
                         id="standard-name"
                         label="Image URL"
                         className={classes.textField}
-                        value={this.state.newMovie.url}
+                        value={this.state.newMovie.poster}
                         onChange={(event) => this.handleChange(event, 'poster')}
                         variant="outlined" />
                     <TextField
@@ -97,11 +96,11 @@ class AddMovie extends Component{
                         margin="normal"
                         variant="outlined"/>
                     <Select
-                        value={this.state.newMovie.genres}
+                        value={this.state.newMovie.genre_id}
                         onChange={(event) => this.handleChange(event, 'genre_id')}
                         input={
                         <OutlinedInput
-                            labelWidth={60}
+                            labelWidth={100}
                             label="Genres"
                             name="Genres"
                             id="age-simple"

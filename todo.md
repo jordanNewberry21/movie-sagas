@@ -14,5 +14,5 @@
 - [x] this will require the SQL JOINS between tables to show genres for a particular movie
 - [x] Details view should also have a `Back to List` button to go back to Home
 - [x] AddMovie view will have a form outlined in the INSTRUCTIONS.md file
-- [] AddMovie will have a `Cancel` button to return to the user to the Home view
+- [x] AddMovie will have a `Cancel` button to return to the user to the Home view
 - [x] AddMovie will have a `Save` button to POST the movie to the DB
