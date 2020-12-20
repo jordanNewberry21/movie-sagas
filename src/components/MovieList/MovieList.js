@@ -45,7 +45,7 @@ class MovieList extends Component{
                 <Grid container spacing={3} alignItems='stretch'>
                     {this.props.reduxState.movies.map((movie) => (
                         <Grid key={movie.id} item xs={12} sm={6} md={4} lg={4}>
-                            <Card onClick={(event) => this.props.goToMovieCard(event, movie.id)}
+                            <Card onClick={(event) => this.props.goToMovieCard(event, movie.id, movie)}
                                 component={Card} className={classes.root}>
                                 <CardContent>
                                     <Typography variant='h4'>{movie.title}</Typography>

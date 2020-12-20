@@ -21,8 +21,8 @@ function* rootSaga() {
 function* fetchDetails(action) {
     console.log('in fetch movie details saga.......');
     try {
-        const response = yield axios.get('/api/movie/' + action.payload);
-        yield put({ type: 'SET_DETAILS', payload: response.data })
+        const response = yield axios.get('/api/genre/' + action.payload);
+        yield put({ type: 'SET_GENRES', payload: response.data })
     } catch (error) {
         console.log('error with movie detail get request.....', error);
         alert('something went wrong. please try again.');
@@ -64,6 +64,16 @@ const movieCard = (state = [], action) => {
     }
 }
 
+// Used to store individual movie genres
+const movieGenres = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_GENRES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 // Used to store the movie genres
 const genres = (state = [], action) => {
     switch (action.type) {
@@ -80,6 +90,7 @@ const storeInstance = createStore(
         movies,
         genres,
         movieCard,
+        movieGenres,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

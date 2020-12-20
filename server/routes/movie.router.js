@@ -12,10 +12,8 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  const sqlText = `SELECT m.title, m.description, m.poster, g.name FROM movies AS m
-                  JOIN movies_genres AS mg ON m.id = mg.movies_id
-                  JOIN genres AS g ON g.id = mg.genres_id
-                  WHERE m.id=$1;`;
+  const sqlText = `SELECT title, description, poster FROM movies
+                  WHERE id=$1;`;
   let movieId = req.params.id;
   console.log(movieId);
   // pool query
