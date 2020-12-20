@@ -13,6 +13,6 @@
 - [x] Details view shows image of the movie with all other details including all genres
 - [x] this will require the SQL JOINS between tables to show genres for a particular movie
 - [x] Details view should also have a `Back to List` button to go back to Home
-- [] AddMovie view will have a form outlined in the INSTRUCTIONS.md file
+- [x] AddMovie view will have a form outlined in the INSTRUCTIONS.md file
 - [] AddMovie will have a `Cancel` button to return to the user to the Home view
-- [] AddMovie will have a `Save` button to POST the movie to the DB
+- [x] AddMovie will have a `Save` button to POST the movie to the DB

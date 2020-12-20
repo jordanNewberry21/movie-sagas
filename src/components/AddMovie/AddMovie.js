@@ -44,6 +44,10 @@ class AddMovie extends Component{
         }
     }
 
+    cancel = () => {
+        this.props.history.push('/');
+    }
+
     handleChange = (event, input) => {
         this.setState({
             newMovie: {
@@ -54,7 +58,8 @@ class AddMovie extends Component{
     } 
 
     handleSubmit = (event, newMovie) => {
-        this.props.dispatch({ type: 'ADD_MOVIE', payload: newMovie })
+        this.props.dispatch({ type: 'ADD_MOVIE', payload: newMovie });
+        this.props.history.push('/');
     }
 
     render(){
@@ -126,7 +131,12 @@ class AddMovie extends Component{
                             color='primary'>
                         Save
                     </Button>
-                    <Button>Cancel</Button>
+                    <Button onClick={this.cancel}
+                            className={classes.button}
+                            variant='contained'
+                            color='secondary'>
+                        Cancel
+                    </Button>
                 </form>
             </div>
         ) // end return
