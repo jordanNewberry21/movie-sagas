@@ -26,8 +26,8 @@ const styles = theme => ({
     width: 200,
   },
   container: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: 'inline-block',
+    flexWrap: 'none',
   },
 });
 
@@ -37,19 +37,33 @@ class AddMovie extends Component{
     state = {
         newMovie: {
             title: '',
-            url: '',
+            poster: '',
             description: '',
-            genres: []
+            genre_id: ''
 
         }
     }
+
+    handleChange = (event, input) => {
+        this.setState({
+            newMovie: {
+                ...this.state.newMovie,
+                [input]: event.target.value,
+            }
+        })
+    } 
+
+    handleSubmit = (event, newMovie) => {
+        this.props.dispatch({ type: 'ADD_MOVIE', payload: newMovie })
+    }
+
     render(){
         const classes = this.props.classes;
         return(
             <div>
+                <p>{JSON.stringify(this.state)}</p>
                 <h2>Want to Add a New Movie?</h2>
-                <form className={classes.container}
-                        onSubmit={(event) => this.handleSubmit(event, this.state.newMovie)}>
+                <form className={classes.container}>
                     <TextField
                         required
                         id="standard-name"
@@ -64,7 +78,7 @@ class AddMovie extends Component{
                         label="Image URL"
                         className={classes.textField}
                         value={this.state.newMovie.url}
-                        onChange={(event) => this.handleChange(event, 'url')}
+                        onChange={(event) => this.handleChange(event, 'poster')}
                         variant="outlined" />
                     <TextField
                         required
@@ -79,12 +93,13 @@ class AddMovie extends Component{
                         variant="outlined"/>
                     <Select
                         value={this.state.newMovie.genres}
-                        onChange={(event) => this.handleChange(event, 'genres')}
+                        onChange={(event) => this.handleChange(event, 'genre_id')}
                         input={
                         <OutlinedInput
-                            labelWidth={this.state.labelWidth}
+                            labelWidth={60}
+                            label="Genres"
                             name="Genres"
-                            id="outlined-age-simple"
+                            id="age-simple"
                         />
                         }
                         >
@@ -105,10 +120,17 @@ class AddMovie extends Component{
                         <MenuItem value={12}>Space-Opera</MenuItem>
                         <MenuItem value={13}>Superhero</MenuItem>
                     </Select>
+                    <Button onClick={(event) => this.handleSubmit(event, this.state.newMovie)}
+                            className={classes.button}
+                            variant='contained'
+                            color='primary'>
+                        Save
+                    </Button>
+                    <Button>Cancel</Button>
                 </form>
             </div>
         ) // end return
     } // end render
 } // end class
 
-export default withStyles(styles)(AddMovie);
+export default withStyles(styles)(connect()(AddMovie));

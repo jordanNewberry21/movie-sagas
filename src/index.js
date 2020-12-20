@@ -16,6 +16,19 @@ import { takeEvery, put } from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('ADD_MOVIE', addMovie);
+}
+
+function* addMovie(action) {
+    console.log('in add movie saga......');
+    console.log('movie to add........', action.payload);
+    try {
+        axios.post('/api/movie', action.payload);
+        yield put({ type: 'FETCH_MOVIES' });
+    } catch (error) {
+        console.log('error with movie detail get request.....', error);
+        alert('something went wrong. please try again.');
+      }
 }
 
 function* fetchDetails(action) {

@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 // material-ui
 import {
     Grid,
-    Button,
     Card,
-    CardActions,
     CardContent,
     CardMedia,
     Typography,

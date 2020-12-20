@@ -13,7 +13,7 @@ class MovieCard extends Component{
             <div>
                 
                 <h2>{movie.title}</h2>
-                <img src={movie.poster} />
+                <img src={movie.poster} alt={movie.title}/>
                 <h4>{movie.description}</h4>
         
                     <ul>
