@@ -35,6 +35,9 @@ import {
           fontFamily: 'Overpass, sans-serif',
           color: 'rgba(220,183,255, 1)',
       },
+      button: {
+          marginBottom: theme.spacing.unit,
+      }
   });
 
 class MovieCard extends Component{
@@ -68,6 +71,7 @@ class MovieCard extends Component{
                     </Typography>
                 
                     <Button onClick={this.backToHome}
+                            className={classes.button}
                             variant='outlined'
                             color='primary'>
                         Back To List
