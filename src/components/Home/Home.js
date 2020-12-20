@@ -5,6 +5,10 @@ import MovieList from '../MovieList/MovieList';
 
 class Home extends Component{
 
+    componentDidMount() {
+        this.props.dispatch({ type: 'FETCH_MOVIES' })
+    }
+
     // movieCard function is passed as props to movieList component as props to have access to Router history
     movieCard = (event, movieId, movie) => {
         this.props.dispatch({

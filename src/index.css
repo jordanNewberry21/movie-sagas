@@ -1,5 +1,17 @@
+
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+@font-face {
+  font-family: 'PermanentMarker';
+  src: local('PermanentMarker'), url('./fonts/PermanentMarker/PermanentMarker.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Overpass';
+  src: local('Overpass'), url('./fonts/Overpass/Overpass-ExtraBold.ttf') format('truetype');
 }

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
 import './App.css';
 
 // component imports
-import Home from '../Home/Home';
-import AddMovie from '../AddMovie/AddMovie';
-import MovieCard from '../MovieCard/MovieCard';
 import Header from '../Header/Header';
 
 class App extends Component {
@@ -14,21 +11,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Router>
-          <nav>
-              <ul>
-                <li>
-                  <Link to='/'>Home</Link>
-                </li>
-                <li>
-                  <Link to='/add'>AddMovie</Link>
-                </li>
-              </ul>
-            </nav>
-            <Route exact path='/' component={Home} />
-            <Route path='/add' component={AddMovie} />
-            <Route path='/details' component={MovieCard} />
-        </Router>
         <p>&copy; 2020 Jordan Newberry</p>
       </div>
     );
