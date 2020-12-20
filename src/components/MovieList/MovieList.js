@@ -64,9 +64,6 @@ class MovieList extends Component{
                                     aria-label="Show Movie Details">
                                     <DescriptionIcon />
                                 </IconButton>
-                                <IconButton aria-label="Delete">
-                                    <HighlightOffIcon />
-                                </IconButton>
                                 </CardActions>
                             </Card>
                         </Grid>
