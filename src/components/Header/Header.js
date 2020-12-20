@@ -22,6 +22,11 @@ const styles = (theme) => ({
     fontFamily: 'PermanentMarker, sans-serif',
     color: 'rgba(220,183,255, 1)',
   },
+  links: {
+    fontFamily: 'PermanentMarker, sans-serif',
+    color: 'rgba(220,183,255, 1)',
+    textDecoration: 'none',
+}
 });
 
 class Header extends Component {
@@ -37,10 +42,10 @@ class Header extends Component {
             <nav>
                 <ul>
                   <li>
-                    <Link to='/'>Home</Link>
+                    <Link className={classes.links} to='/'>Home</Link>
                   </li>
                   <li>
-                    <Link to='/add'>AddMovie</Link>
+                    <Link className={classes.links} to='/add'>AddMovie</Link>
                   </li>
                 </ul>
               </nav>

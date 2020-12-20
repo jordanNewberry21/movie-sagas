@@ -21,6 +21,7 @@ import {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        background: 'rgba(220,183,255, 1)',
     },
     media: {
         height: '100%',
@@ -32,7 +33,8 @@ import {
       },
       heading: {
           fontFamily: 'Overpass, sans-serif',
-          color: 'rgba(220,183,255, 1)',
+          color: 'rgba(0, 0, 25, 1)',
+          background: 'rgba(220,183,255, 1)',
       }
   });
 
@@ -42,11 +44,10 @@ class MovieList extends Component{
         const {classes} = this.props;
         return(
             <div>
-                <Grid container spacing={3} alignItems='stretch'>
+                <Grid container spacing={1} alignItems='stretch'>
                     {this.props.reduxState.movies.map((movie) => (
                         <Grid key={movie.id} item xs={12} sm={6} md={4} lg={4}>
-                            <Card onClick={(event) => this.props.goToMovieCard(event, movie.id, movie)}
-                                component={Card} className={classes.root}>
+                            <Card component={Card} className={classes.root}>
                                 <CardContent>
                                     <Typography className={classes.heading} variant='h4'>{movie.title}</Typography>
                                 </CardContent>
@@ -57,7 +58,8 @@ class MovieList extends Component{
                                 alt={movie.title}
                                 />
                                 <CardActions className={classes.actions} disableActionSpacing>
-                                <IconButton aria-label="Show Movie Details">
+                                <IconButton onClick={(event) => this.props.goToMovieCard(event, movie.id, movie)}
+                                    aria-label="Show Movie Details">
                                     <DescriptionIcon />
                                 </IconButton>
                                 <IconButton aria-label="Delete">
