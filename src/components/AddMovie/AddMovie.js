@@ -58,8 +58,9 @@ class AddMovie extends Component{
     } 
 
     handleSubmit = (event, newMovie) => {
-        this.props.dispatch({ type: 'ADD_MOVIE', payload: newMovie });
         this.props.history.push('/');
+        this.props.dispatch({ type: 'ADD_MOVIE', payload: newMovie });
+        this.props.dispatch({ type: 'FETCH_MOVIES' });
     }
 
     render(){

@@ -18,29 +18,19 @@ import {
       flexDirection: 'column',
       justifyContent: 'space-between',
     },
+    media: {
+        height: 0,
+        paddingTop: '56.25%', // 16:9
+      },
   });
 
 class MovieList extends Component{
-
-    componentDidMount() {
-        this.props.dispatch({ type: 'FETCH_MOVIES'})
-    }
-
-    // movieCard = (event, movieId) => {
-    //     this.props.dispatch({
-    //         type: 'FETCH_DETAILS',
-    //         payload: movieId,
-    //     });
-    //     console.log(this.props.history);
-    //     this.props.history.push('/details');
-    // }
 
     render(){
         const classes = this.props;
         return(
             <div>
-                <h2>hello from MovieList component</h2>
-                <Grid container spacing={3} alignItems='stretch'>
+                <Grid container spacing={0} alignItems='stretch'>
                     {this.props.reduxState.movies.map((movie) => (
                         <Grid key={movie.id} item xs={12} sm={6} md={4} lg={4}>
                             <Card onClick={(event) => this.props.goToMovieCard(event, movie.id, movie)}
@@ -51,7 +41,7 @@ class MovieList extends Component{
                                 <CardMedia
                                 component='img'
                                 className={classes.media}
-                                image={movie.poster}
+                                src={movie.poster}
                                 alt={movie.title}
                               />
                             </Card>

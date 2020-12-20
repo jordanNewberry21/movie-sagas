@@ -22,7 +22,6 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <h2>hello from Home component</h2>
                 <MovieList goToMovieCard={this.movieCard} />
             </div>
         ) // end return

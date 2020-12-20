@@ -6,13 +6,14 @@ import './App.css';
 import Home from '../Home/Home';
 import AddMovie from '../AddMovie/AddMovie';
 import MovieCard from '../MovieCard/MovieCard';
+import Header from '../Header/Header';
 
 class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
       <div className="App">
-        <h1>Movies!</h1>
+        <Header />
         <Router>
           <nav>
               <ul>

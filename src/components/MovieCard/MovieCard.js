@@ -18,8 +18,8 @@ class MovieCard extends Component{
         
                     <ul>
                         <li>Genres:</li>
-                    {this.props.reduxState.movieGenres.map((g) => (
-                        <li>{g.name}</li>
+                    {this.props.reduxState.movieGenres.map((g, i) => (
+                        <li key={i}>{g.name}</li>
                     ))}
                     </ul>
 
